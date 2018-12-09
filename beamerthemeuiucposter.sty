@@ -1,0 +1,131 @@
+% this style was created by David Vilar
+% and modified by Andreas Kloeckner
+%
+% retrieved from
+% http://www-i6.informatik.rwth-aachen.de/~dreuw/latexbeamerposter.php
+
+\ProvidesPackage{beamerthemeuiucposter}
+
+%\selectcolormodel{cmyk}
+\mode<presentation>
+
+\setbeamertemplate{enumerate items}{square}
+
+% http://identitystandards.illinois.edu/graphicstandardsmanual/generalguidelines/colors.html
+\definecolor{uiucblue}{RGB}{0,60,125}
+\definecolor{uiucorange}{RGB}{244,127,36}
+\definecolor{uiuclightblue}{RGB}{110,139,191}
+\definecolor{uiucdarkorange}{RGB}{239,138,28}
+
+% headline colors and fonts
+\setbeamercolor{headline}{fg=white,bg=uiucblue}
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{author in headline}{fg=lightgray}
+\setbeamercolor{institute in headline}{fg=lightgray}
+\setbeamercolor{logo in headline}{fg=black,bg=lightgray}
+\setbeamercolor{separation line}{bg=uiucorange}
+
+% footline colors and fonts
+\setbeamercolor{footline}{fg=white,bg=uiucblue}
+\setbeamerfont{footline}{size=\normalsize}
+
+% body colors and fonts
+\setbeamercolor*{normal text}{fg=black,bg=uiuclightblue!20!white}
+\setbeamercolor*{local structure}{fg=uiucblue}
+
+% block environment
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{fg=uiucorange,bg=uiucblue}
+\setbeamerfont{block title}{size=\large,series=\bf}
+
+
+%  \setbeamercolor{framesubtitle}{fg=ta3orange, bg=ta2gray}
+%  \setbeamercolor{author in head/foot}{fg=tabutter, bg=black}
+%  \setbeamercolor{title in head/foot}{bg=tabutter, fg=black}
+
+\setbeamercolor{alerted text}{fg=red}
+
+\setbeamercolor{alerted text}{fg=red}
+%\setbeamertemplate{itemize items}[triangle]
+\setbeamerfont{itemize}{size=\normalsize}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+\useinnertheme{rectangles}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{%
+  \vskip.75ex
+  \begin{beamercolorbox}[leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{%
+  \end{beamercolorbox}
+}
+
+% {{{ headline
+
+\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[wd=\paperwidth]{upper separation line head}
+  %  \rule{0pt}{6pt}
+  %\end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[t]
+      \begin{column}{.045\paperwidth}%
+      \end{column}
+      \begin{column}{.5\paperwidth}%
+        \vspace*{0.3ex}\\
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\}
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[0.75ex]}%
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}}\\
+        \vspace*{1ex}%
+      \end{column}
+      \begin{column}{.3\paperwidth}%
+        \vspace*{3ex}
+        \includegraphics[width=\textwidth]{illinois-wordmark-light-letters.pdf}%
+      \end{column}
+      \begin{column}{.045\paperwidth}%
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  %\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  %  \rule{0pt}{6pt}
+  %\end{beamercolorbox}
+}
+
+% }}}
+
+% {{{ footer
+
+\setbeamertemplate{footline}{%
+  %\begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+  %  \rule{0pt}{6pt}
+  %\end{beamercolorbox}
+
+  \begin{beamercolorbox}[ht=3.5ex,leftskip=1cm,rightskip=1cm]{footline}%
+    Department of Computer Science
+    $\cdot$ University of Illinois at Urbana-Champaign
+    $\cdot$ Urbana, IL
+    \hfill \url{https://cs.illinois.edu}
+    \vspace{0.5ex}
+  \end{beamercolorbox}
+
+  %\begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+  %  \rule{0pt}{6pt}
+  %\end{beamercolorbox}
+}
+
+% }}}
+
+\mode<all>
+
+% vim: foldmethod=marker
